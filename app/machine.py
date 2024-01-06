@@ -76,7 +76,7 @@ class Machine:
             --------
                 The loaded instance of the class.
         """
-        pass
+        return load(filepath)
 
     def info(self):
         """
