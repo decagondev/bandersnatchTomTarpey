@@ -84,4 +84,7 @@ class Database:
         Returns:
             str: An HTML table as a string, or 'None' if the collection is empty.
         """
-        pass
+        if self.count() > 0:
+            return self.dataframe().to_html(index=False)
+        else:
+            return 'None'
