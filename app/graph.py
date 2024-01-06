@@ -1,5 +1,5 @@
 from altair import Chart
-
+import altair as alt
 
 def chart(df, x, y, target) -> Chart:
     """
@@ -23,4 +23,8 @@ def chart(df, x, y, target) -> Chart:
     - Axes and titles have customized font sizes and appearances.
     - The chart's view size is set to a fixed width and height with a gray fill and no stroke.
     """
-    pass
+    result = (Chart(df, title=f"{y} by {x} for {target}").mark_circle()
+    .encode(x=x, y=y, tooltip=df.columns.to_list(), color=target).interactive())
+
+    return result
+    
