@@ -25,6 +25,21 @@ class Machine:
         pass
 
     def __call__(self, feature_basis):
+        """
+            Predicts the rarity and its probability for the given features.
+
+            Parameters:
+            -----------
+            feature_basis : pd.DataFrame
+                A dataframe containing the features for which predictions need to be made.
+
+            Returns:
+            --------
+            prediction : str
+                The predicted class.
+            probability : float
+                The probability of the predicted class.
+        """
         pass
 
     def save(self, filepath):
