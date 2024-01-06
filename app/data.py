@@ -76,7 +76,7 @@ class Database:
         Returns:
             DataFrame: A pandas DataFrame containing the collection data.
         """
-        pass
+        return DataFrame(self.collection.find({}, {"_id": False}))
 
     def html_table(self) -> str:
         """Generates an HTML table from the data for display in flask app.
