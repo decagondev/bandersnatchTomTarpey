@@ -13,6 +13,15 @@ class Machine:
     """
 
     def __init__(self, df):
+        """
+            Initializes the Random Forest Classifier model with the given dataset and fits it to the data.
+            Creates timestamp after model has been fit to the data.
+
+            Parameters:
+            -----------
+            df : pd.DataFrame
+                A dataframe where 'Rarity' is the target column and the rest are feature columns.
+        """
         pass
 
     def __call__(self, feature_basis):
