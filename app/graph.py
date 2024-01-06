@@ -33,5 +33,6 @@ def chart(df, x, y, target) -> Chart:
 
     result = result.configure_axis(gridOpacity=0.3, titleFontSize=20)
     result = result.configure_view(continuousWidth=500, continuousHeight=500, fill='gray', stroke=None)
+    result = result.configure_title(fontSize=30, color='black')
     return result
     
