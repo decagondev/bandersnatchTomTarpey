@@ -68,7 +68,7 @@ class Database:
         Returns:
             int: Number of records in the collection.
         """
-        pass
+        return self.collection.count_documents(filter={})
 
     def dataframe(self) -> DataFrame:
         """Retrieves data from the collection and returns it as a pandas DataFrame.
