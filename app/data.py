@@ -41,7 +41,7 @@ class Database:
         Args:
             collection (str): The name of the collection to work with, passed as string.
         """
-        pass
+        self.collection = self.database[collection]
 
     def seed(self, amount):
         """Seeds the collection with a specified number of random Monster records.
