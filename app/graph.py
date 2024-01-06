@@ -32,5 +32,6 @@ def chart(df, x, y, target) -> Chart:
     result = result.add_params(zoom, pan)
 
     result = result.configure_axis(gridOpacity=0.3, titleFontSize=20)
+    result = result.configure_view(continuousWidth=500, continuousHeight=500, fill='gray', stroke=None)
     return result
     
