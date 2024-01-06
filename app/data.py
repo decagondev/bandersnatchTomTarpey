@@ -60,7 +60,7 @@ class Database:
         Returns:
             Formatted string providing boolean about reset success.
         """      
-        pass
+        return {'Collection reset successful?': f'{self.collection.delete_many(filter={}).acknowledged}'}
 
     def count(self) -> int:
         """Counts the number of records in the collection.
