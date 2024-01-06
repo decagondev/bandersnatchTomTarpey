@@ -52,7 +52,7 @@ class Database:
         Returns:
             Formatted string to report if seed was successful.
         """
-        pass
+        return {'Seed successful': f"{self.collection.insert_many([Monster().to_dict() for _ in range(amount)]).acknowledged}"}
 
     def reset(self):
         """Resets the collection by removing all records.
