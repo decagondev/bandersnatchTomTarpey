@@ -28,5 +28,7 @@ def chart(df, x, y, target) -> Chart:
     result = result.configure(background='gray', padding={"left": 50, "top": 50, "right": 50, "bottom": 50})
 
     zoom = alt.selection(type='interval', bind='scales')
+    pan = alt.selection(type='interval', bind='scales', on="[mousedown[event.altKey], window:mouseup] > window:mousemove!", encodings=['x'])
+    
     return result
     
