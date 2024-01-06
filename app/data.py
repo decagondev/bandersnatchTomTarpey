@@ -32,6 +32,8 @@ class Database:
         print(db.count())  # Output : 0
 
     """
+    load_dotenv()
+    database = MongoClient(getenv("DB_URL"), tlsCAFile=where())["Database"]
 
     def __init__(self, collection: str):
         """Initializes the Database class with the specified collection.
