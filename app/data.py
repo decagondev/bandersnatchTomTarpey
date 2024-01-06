@@ -32,17 +32,54 @@ class Database:
         print(db.count())  # Output : 0
 
     """
+
+    def __init__(self, collection: str):
+        """Initializes the Database class with the specified collection.
+
+        Args:
+            collection (str): The name of the collection to work with, passed as string.
+        """
+        pass
+
     def seed(self, amount):
+        """Seeds the collection with a specified number of random Monster records.
+
+        Args:
+            amount (int): The number of Monster records to generate and insert.
+
+        Returns:
+            Formatted string to report if seed was successful.
+        """
         pass
 
     def reset(self):
+        """Resets the collection by removing all records.
+
+        Returns:
+            Formatted string providing boolean about reset success.
+        """      
         pass
 
     def count(self) -> int:
+        """Counts the number of records in the collection.
+
+        Returns:
+            int: Number of records in the collection.
+        """
         pass
 
     def dataframe(self) -> DataFrame:
+        """Retrieves data from the collection and returns it as a pandas DataFrame.
+
+        Returns:
+            DataFrame: A pandas DataFrame containing the collection data.
+        """
         pass
 
     def html_table(self) -> str:
+        """Generates an HTML table from the data for display in flask app.
+
+        Returns:
+            str: An HTML table as a string, or 'None' if the collection is empty.
+        """
         pass
