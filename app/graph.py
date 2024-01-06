@@ -25,6 +25,7 @@ def chart(df, x, y, target) -> Chart:
     """
     result = (Chart(df, title=f"{y} by {x} for {target}").mark_circle()
     .encode(x=x, y=y, tooltip=df.columns.to_list(), color=target).interactive())
+    result = result.configure(background='gray', padding={"left": 50, "top": 50, "right": 50, "bottom": 50})
 
     return result
     
