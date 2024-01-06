@@ -70,4 +70,12 @@ class Machine:
         pass
 
     def info(self):
+        """
+            Provides a string description of the classifier with its timestamp.
+
+            Returns:
+            --------
+            str
+                A string formatted as: "Currently running {name}, from {timestamp}".
+        """
         pass
