@@ -47,7 +47,9 @@ class Machine:
             probability : float
                 The probability of the predicted class.
         """
-        pass
+        prediction, *_ = self.model.predict(feature_basis)
+        probas, *_ = self.model.predict_proba(feature_basis)
+        return prediction, max(probas)
 
     def save(self, filepath):
         """
