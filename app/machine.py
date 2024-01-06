@@ -43,6 +43,14 @@ class Machine:
         pass
 
     def save(self, filepath):
+        """
+            Saves the current instance to the specified filepath.
+
+            Parameters:
+            -----------
+            filepath : str
+                The path where the current instance should be saved.
+        """
         pass
 
     @staticmethod
