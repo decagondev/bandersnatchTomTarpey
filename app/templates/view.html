@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Bandersnatch Viewer</h1>
+    <p>Monster Count: {{ count | safe }}</p>
+
+    <form method="post" action="{{ url_for('view') }}">
+        <p><label>X-axis:
+            <select name="x_axis">
+                {% for op in options %}
+                    {% if op == x_axis %}
+                        <option selected="selected">{{ op }}</option>
+                    {% else %}
+                        <option>{{ op }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </label></p>
+        <br class="clear">
+        <p><label>Y-axis:
+            <select name="y_axis">
+                {% for op in options %}
+                    {% if op == y_axis %}
+                        <option selected="selected">{{ op }}</option>
+                    {% else %}
+                        <option>{{ op }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </label></p>
+        <br class="clear">
+        <p><label>Target:
+            <select name="target">
+                {% for op in options %}
+                    {% if op == target %}
+                        <option selected="selected">{{ op }}</option>
+                    {% else %}
+                        <option>{{ op }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </label></p>
+        <br><br class="clear">
+        <button name="submit">Regenerate Chart</button>
+        <br class="clear">
+    </form>
+
+    <div id="graph"></div>
+    <script type="text/javascript">
+        vegaEmbed('#graph', {{ graph | safe }});
+    </script>
+{% endblock %}

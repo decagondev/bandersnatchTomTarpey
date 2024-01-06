@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Bandersnatch Model</h1>
+    <p>{{ info | safe }}</p>
+
+    <h2>Prediction Basis</h2>
+    <form id="form" method="post" action="{{ url_for('model') }}">
+        <p><label>
+            Level: <input name="level" value="{{ level }}"/>
+        </label></p>
+        <br class="clear">
+        <p><label>
+            Health: <input name="health" value="{{ health }}"/>
+        </label></p>
+        <br class="clear">
+        <p><label>
+            Energy: <input name="energy" value="{{ energy }}"/>
+        </label></p>
+        <br class="clear">
+        <p><label>
+            Sanity: <input name="sanity" value="{{ sanity }}"/>
+        </label></p>
+        <br class="clear">
+        <button type="submit">Predict Rarity</button>
+        <br class="clear">
+    </form>
+
+    <h3>
+        Prediction: {{ prediction }}
+        <br>
+        Confidence: {{ confidence }}
+    </h3>
+
+{% endblock %}

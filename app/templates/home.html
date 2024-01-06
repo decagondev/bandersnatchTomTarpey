@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Bloom Institute of Technology</h1>
+    <h2>Bandersnatch {{ sprint }}</h2>
+    <p>Proof of Local Setup: {{ password.decode() }}</p>
+    <h3>Data Science Team</h3>
+    <ul>
+        <li>Robert Sharp: Systems Designer, DevOps</li>
+        <li>April Fairweather: Database Engineer</li>
+        <li>Thackery Binx: Data Analyst</li>
+        <li>Eugene Albright: Machine Learning Engineer</li>
+    </ul>
+    <h3>Tech Stack</h3>
+    <ul>
+        <li>Logic: Python3</li>
+        <li>API Framework: Flask</li>
+        <li>Templates: Jinja2</li>
+        <li>Structure: HTML5</li>
+        <li>Styling: CSS3</li>
+        <li>Database: MongoDB</li>
+        <li>Graphs: Altair</li>
+        <li>Machine Learning: Scikit</li>
+    </ul>
+    <h4>Example Monster</h4>
+    <ul>
+        {% for k, v in monster.items() %}
+            <li>{{ k }}: {{ v }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
