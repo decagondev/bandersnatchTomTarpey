@@ -10,7 +10,7 @@ from app.data import Database
 from app.graph import chart
 from app.machine import Machine
 
-SPRINT = 2 # change this to each sprint as progress
+SPRINT = 3 # change this to each sprint as progress
 APP = Flask(__name__)
 
 
