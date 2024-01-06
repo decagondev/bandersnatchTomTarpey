@@ -60,7 +60,7 @@ class Machine:
             filepath : str
                 The path where the current instance should be saved.
         """
-        pass
+        dump(self, filepath)
 
     @staticmethod
     def open(filepath):
