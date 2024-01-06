@@ -87,4 +87,4 @@ class Machine:
             str
                 A string formatted as: "Currently running {name}, from {timestamp}".
         """
-        pass
+        return f'Currently running {self.name}, from {self.timestamp}'
