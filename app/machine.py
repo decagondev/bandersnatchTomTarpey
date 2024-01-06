@@ -22,7 +22,14 @@ class Machine:
             df : pd.DataFrame
                 A dataframe where 'Rarity' is the target column and the rest are feature columns.
         """
-        pass
+        self.name = "Random Forest Classifier"
+        target = df["Rarity"]
+        features = df.drop(columns=["Rarity"])
+        self.model = RandomForestClassifier(n_estimators=100, n_jobs=-1, max_depth=30, bootstrap=False,
+                                            criterion='gini', max_features='log2', min_samples_leaf=1,
+                                            min_samples_split=2)
+        self.model.fit(features, target)
+        self.timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     def __call__(self, feature_basis):
         """
