@@ -55,6 +55,18 @@ class Machine:
 
     @staticmethod
     def open(filepath):
+        """
+            Loads and returns a saved model from the given filepath.
+
+            Parameters:
+            -----------
+            filepath : str
+                The path from which the instance should be loaded.
+
+            Returns:
+            --------
+                The loaded instance of the class.
+        """
         pass
 
     def info(self):
