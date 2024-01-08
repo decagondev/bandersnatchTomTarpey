@@ -3,7 +3,7 @@ import os
 
 from Fortuna import random_int, random_float
 from MonsterLab import Monster
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, reset
 from pandas import DataFrame
 
 from app.data import Database
@@ -22,6 +22,13 @@ def home():
         monster=Monster().to_dict(),
         password=b64decode(b"VGFuZ2VyaW5lIERyZWFt"),
     )
+
+@APP.route("/reset")
+def reset():
+    db = Database()
+    db.reset()
+    db.seed(500)
+    return redirect("/data")
 
 
 @APP.route("/data")
